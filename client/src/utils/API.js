@@ -1,13 +1,12 @@
 import axios from "axios";
 
-export default {
-  // Gets all payments
+export const getPayments = {
   getPayments: function () {
-    return axios.get("/api/payments");
+    return axios.get("/");
   },
-  // Gets the payment with the given id
+};
+export const getPayment = {
   getPayment: function (id) {
-    console.log("client side:", id);
-    return axios.get(`/api/payments/${id}`);
+    return axios.get(`/${id}`);
   },
 };

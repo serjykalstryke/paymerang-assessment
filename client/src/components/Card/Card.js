@@ -1,5 +1,5 @@
 import React from "react";
-import API from "../../utils/API";
+import { getPayment, getPayments } from "../../utils/API";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -30,7 +30,7 @@ class Card extends React.Component {
   }
 
   componentDidMount() {
-    API.getPayment(this.props.match.params.id).then((result) => {
+    getPayment.getPayment(this.props.match.params.id).then((result) => {
       this.setState({ payment: [result.data] });
     });
   }

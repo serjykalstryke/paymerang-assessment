@@ -25,6 +25,6 @@ const paymentSchema = new Schema({
   Remittance: Array,
 });
 
-const Payment = mongoose.model("Payment", paymentSchema);
+const Payment = mongoose.model("payment", paymentSchema);
 
 module.exports = Payment;

@@ -3,6 +3,7 @@ const db = require("../../models");
 
 router.route("/").get((req, res) => {
   db.Payment.find({}).then((results) => {
+    console.log(res.data);
     res.json(results);
   });
 });

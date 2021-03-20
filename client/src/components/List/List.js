@@ -1,5 +1,5 @@
 import React from "react";
-import API from "../../utils/API";
+import { getPayments, getPayment } from "../../utils/API";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -21,7 +21,8 @@ class List extends React.Component {
     paymentArrays: [],
   };
   componentDidMount() {
-    API.getPayments().then((results) => {
+    getPayments.getPayments().then((results) => {
+      console.log(results);
       let paymentArrays = [];
       for (let i = 0; i < results.data.length; i++) {
         let payorObj = results.data[i].Payee;
@@ -53,7 +54,7 @@ class List extends React.Component {
           title="Payments"
           options={{
             paging: true,
-            search: true,
+            search: false,
             toolbar: true,
           }}
         />

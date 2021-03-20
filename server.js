@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/api", router);
+app.use("/api/payments", router);
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
